@@ -21,10 +21,9 @@
 }
 
 QToolTip{
-
-background: transparent;
+background-color: #d9d1d5;
 color: #413abc;
-font: bold 12px 'Arial';
+font: bold 12px 'Helvetica';
 padding: 4px;
 }
 
