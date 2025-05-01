@@ -8,6 +8,25 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    // Navigate to Page when pushButton is clicked
+    connect(ui->Dashboard_pushButton, &QPushButton::clicked, this, [=](){
+        ui->stackedWidget->setCurrentWidget(ui->Dashboard_page);
+    });
+
+    connect(ui->Sales_pushButton, &QPushButton::clicked, this, [=](){
+        ui->stackedWidget->setCurrentWidget(ui->Sales_page);
+    });
+
+
+    connect(ui->Sales_pushButton, &QPushButton::clicked, this, [=](){
+        ui->stackedWidget->setCurrentWidget(ui->Sales_page);
+    });
+
+
+    connect(ui->Sales_pushButton, &QPushButton::clicked, this, [=](){
+        ui->stackedWidget->setCurrentWidget(ui->Sales_page);
+    });
+
     // List of Cards Frames
     QList<QWidget*> cards = {
                               ui->DashBoardLogoframe, ui->Revenue_Card_frame,
@@ -18,7 +37,7 @@ MainWindow::MainWindow(QWidget *parent)
     for(QWidget* card : cards){
         QGraphicsDropShadowEffect* shadow= new QGraphicsDropShadowEffect(this);
         shadow->setBlurRadius(40);
-        shadow->setOffset(0, 6);
+        shadow->setOffset(6, 6);
         shadow->setColor(QColor(0, 120, 255, 150));
         card->setGraphicsEffect(shadow);
 
