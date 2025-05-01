@@ -19,8 +19,5 @@ public:
 
 private:
     Ui::MainWindow *ui;
-
-    void animatePageSwitch(QWidget* from, QWidget* to, int direction);
-    void fadeSwitch(QWidget* from, QWidget* to);
 };
 #endif // MAINWINDOW_H
