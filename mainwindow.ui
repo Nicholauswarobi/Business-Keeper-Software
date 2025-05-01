@@ -1975,13 +1975,139 @@ padding: 4px;
              </layout>
             </widget>
             <widget class="QWidget" name="About_page"/>
-            <widget class="QWidget" name="Settings_page"/>
-            <widget class="QWidget" name="Suppliers_page"/>
-            <widget class="QWidget" name="Reports_page"/>
-            <widget class="QWidget" name="Expenses_page"/>
-            <widget class="QWidget" name="Purchases_page"/>
-            <widget class="QWidget" name="Sales_page"/>
-            <widget class="QWidget" name="Stock_page"/>
+            <widget class="QWidget" name="Settings_page">
+             <layout class="QHBoxLayout" name="horizontalLayout_21">
+              <item>
+               <widget class="QLabel" name="label_35">
+                <property name="font">
+                 <font>
+                  <pointsize>50</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>SETTINGS PAGE</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="Suppliers_page">
+             <layout class="QHBoxLayout" name="horizontalLayout_23">
+              <item>
+               <widget class="QLabel" name="label_37">
+                <property name="font">
+                 <font>
+                  <pointsize>50</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>SUPPLIERS PAGE</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="Reports_page">
+             <layout class="QHBoxLayout" name="horizontalLayout_19">
+              <item>
+               <widget class="QLabel" name="label_33">
+                <property name="font">
+                 <font>
+                  <pointsize>50</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>REPORTS PAGE</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="Expenses_page">
+             <layout class="QHBoxLayout" name="horizontalLayout_17">
+              <item>
+               <widget class="QLabel" name="label_31">
+                <property name="font">
+                 <font>
+                  <pointsize>50</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>EXPENSES PAGE</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="Purchases_page">
+             <layout class="QHBoxLayout" name="horizontalLayout_18">
+              <item>
+               <widget class="QLabel" name="label_32">
+                <property name="font">
+                 <font>
+                  <pointsize>50</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>PURCHASES PAGE</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="Sales_page">
+             <layout class="QHBoxLayout" name="horizontalLayout_20">
+              <item>
+               <widget class="QLabel" name="label_34">
+                <property name="font">
+                 <font>
+                  <pointsize>50</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>SALES PAGE</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="Stock_page">
+             <layout class="QHBoxLayout" name="horizontalLayout_22">
+              <item>
+               <widget class="QLabel" name="label_36">
+                <property name="font">
+                 <font>
+                  <pointsize>50</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>STOCK/PRODUCTS PAGE</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
            </widget>
           </item>
          </layout>
