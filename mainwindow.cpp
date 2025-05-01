@@ -1,6 +1,9 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include "QGraphicsDropShadowEffect"
+#include "QPropertyAnimation"
+#include "QParallelAnimationGroup"
+#include "QStackedWidget"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -71,4 +74,41 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::animatePageSwitch(QWidget* from, QWidget* to, int direction){
+    int width = ui->stackedWidget->width();
+
+    // Position the target page
+    to->move(direction * width, 0);
+    to->show();
+
+    // Animate the movement
+    QPropertyAnimation* animFrom = new QPropertyAnimation(from, "pos");
+    animFrom->setDuration(300);
+    animFrom->setStartValue(from->pos());
+    animFrom->setEndValue(QPoint(-direction * width, 0));
+
+    QPropertyAnimation* animTo = new QPropertyAnimation(to, "pos");
+    animTo->setDuration(300);
+    animTo->setStartValue(to->pos());
+    animTo->setEndValue(QPoint(0, 0));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
