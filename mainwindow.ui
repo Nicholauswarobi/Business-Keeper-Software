@@ -1974,7 +1974,25 @@ padding: 4px;
               </item>
              </layout>
             </widget>
-            <widget class="QWidget" name="About_page"/>
+            <widget class="QWidget" name="About_page">
+             <layout class="QHBoxLayout" name="horizontalLayout_24">
+              <item>
+               <widget class="QLabel" name="label_38">
+                <property name="font">
+                 <font>
+                  <pointsize>50</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>ABOUT PAGE</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
             <widget class="QWidget" name="Settings_page">
              <layout class="QHBoxLayout" name="horizontalLayout_21">
               <item>
