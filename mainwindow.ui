@@ -58,7 +58,7 @@ border-radius: 8px;
 #About_pushButton:hover, #LogOut_pushButton:hover, #Settings_pushButton:hover{
 	background-color: #2a2575;
 	border-radius: 7px;
-	padding-right: 1px;
+	padding-left: 3px;
 }
 
 
