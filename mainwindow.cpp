@@ -9,11 +9,13 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     // List of Cards Frames
-    QList<QFrame*> cards = {
-                              ui->DashBoardLogoframe};
+    QList<QWidget*> cards = {
+                              ui->DashBoardLogoframe, ui->Revenue_Card_frame,
+        ui->Expenses_Card_frame, ui->Profit_Card_frame, ui->StockIN_Card_frame,
+        ui->StockOUT_frame, ui->StockRemain_frame};
 
     // Apply drop down shadow
-    for(QFrame* card : cards){
+    for(QWidget* card : cards){
         QGraphicsDropShadowEffect* shadow= new QGraphicsDropShadowEffect(this);
         shadow->setBlurRadius(40);
         shadow->setOffset(0, 6);
