@@ -18,14 +18,32 @@ MainWindow::MainWindow(QWidget *parent)
     });
 
 
-    connect(ui->Sales_pushButton, &QPushButton::clicked, this, [=](){
-        ui->stackedWidget->setCurrentWidget(ui->Sales_page);
+    connect(ui->Reports_pushButton, &QPushButton::clicked, this, [=](){
+        ui->stackedWidget->setCurrentWidget(ui->Reports_page);
     });
 
 
-    connect(ui->Sales_pushButton, &QPushButton::clicked, this, [=](){
-        ui->stackedWidget->setCurrentWidget(ui->Sales_page);
+    connect(ui->Stock_pushButton, &QPushButton::clicked, this, [=](){
+        ui->stackedWidget->setCurrentWidget(ui->Stock_page);
     });
+
+
+    connect(ui->Purchases_pushButton, &QPushButton::clicked, this, [=](){
+        ui->stackedWidget->setCurrentWidget(ui->Purchases_page);
+    });
+
+    connect(ui->Suppliers_pushButton, &QPushButton::clicked, this, [=](){
+        ui->stackedWidget->setCurrentWidget(ui->Suppliers_page);
+    });
+
+    connect(ui->Settings_pushButton, &QPushButton::clicked, this, [=](){
+        ui->stackedWidget->setCurrentWidget(ui->Settings_page);
+    });
+
+    connect(ui->About_pushButton, &QPushButton::clicked, this, [=](){
+        ui->stackedWidget->setCurrentWidget(ui->About_page);
+    });
+
 
     // List of Cards Frames
     QList<QWidget*> cards = {
