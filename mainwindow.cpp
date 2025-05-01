@@ -13,43 +13,57 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Navigate to Page when pushButton is clicked
     connect(ui->Dashboard_pushButton, &QPushButton::clicked, this, [=](){
-        ui->stackedWidget->setCurrentWidget(ui->Dashboard_page);
+        QWidget* from = ui->stackedWidget->currentWidget();
+        QWidget* to = ui->Dashboard_page;
+        animatePageSwitch(from, to, -1);    // -1 = slide left
     });
 
+
     connect(ui->Sales_pushButton, &QPushButton::clicked, this, [=](){
-        ui->stackedWidget->setCurrentWidget(ui->Sales_page);
+        QWidget* from = ui->stackedWidget->currentWidget();
+        QWidget* to = ui->Sales_page;
+        animatePageSwitch(from, to, 1);    // -1 = slide right
     });
 
 
     connect(ui->Reports_pushButton, &QPushButton::clicked, this, [=](){
-        ui->stackedWidget->setCurrentWidget(ui->Reports_page);
+        QWidget* from = ui->stackedWidget->currentWidget();
+        QWidget* to = ui->Reports_page;
+        animatePageSwitch(from, to, -1);    // -1 = slide right
     });
+
+
+
+    connect(ui->Expenses_pushButton, &QPushButton::clicked, this, [=](){
+        QWidget* from = ui->stackedWidget->currentWidget();
+        QWidget* to = ui->Expenses_page;
+        animatePageSwitch(from, to, 1);    // -1 = slide right
+    });
+
+
+
+    connect(ui->About_pushButton, &QPushButton::clicked, this, [=](){
+        QWidget* from = ui->stackedWidget->currentWidget();
+        QWidget* to = ui->About_page;
+        animatePageSwitch(from, to, -1);    // -1 = slide right
+    });
+
 
 
     connect(ui->Stock_pushButton, &QPushButton::clicked, this, [=](){
-        ui->stackedWidget->setCurrentWidget(ui->Stock_page);
+        QWidget* from = ui->stackedWidget->currentWidget();
+        QWidget* to = ui->Stock_page;
+        animatePageSwitch(from, to, 1);    // -1 = slide right
     });
+
 
 
     connect(ui->Purchases_pushButton, &QPushButton::clicked, this, [=](){
-        ui->stackedWidget->setCurrentWidget(ui->Purchases_page);
+        QWidget* from = ui->stackedWidget->currentWidget();
+        QWidget* to = ui->Purchases_page;
+        animatePageSwitch(from, to, -1);    // -1 = slide right
     });
 
-    connect(ui->Suppliers_pushButton, &QPushButton::clicked, this, [=](){
-        ui->stackedWidget->setCurrentWidget(ui->Suppliers_page);
-    });
-
-    connect(ui->Settings_pushButton, &QPushButton::clicked, this, [=](){
-        ui->stackedWidget->setCurrentWidget(ui->Settings_page);
-    });
-
-    connect(ui->About_pushButton, &QPushButton::clicked, this, [=](){
-        ui->stackedWidget->setCurrentWidget(ui->About_page);
-    });
-
-    connect(ui->Expenses_pushButton, &QPushButton::clicked, this, [=](){
-        ui->stackedWidget->setCurrentWidget(ui->Expenses_page);
-    });
 
 
     // List of Cards Frames
@@ -105,19 +119,15 @@ void MainWindow::animatePageSwitch(QWidget* from, QWidget* to, int direction){
     group->start(QAbstractAnimation::DeleteWhenStopped);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
+
+
+
+
+
+
+
+
+
+
+

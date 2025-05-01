@@ -19,5 +19,7 @@ public:
 
 private:
     Ui::MainWindow *ui;
+
+    void animatePageSwitch(QWidget* from, QWidget* to, int direction);
 };
 #endif // MAINWINDOW_H
