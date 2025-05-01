@@ -835,7 +835,7 @@ border-radius: 8px;
             <widget class="QWidget" name="page_6"/>
             <widget class="QWidget" name="page_5"/>
             <widget class="QWidget" name="page_4"/>
-            <widget class="QWidget" name="page_3"/>
+            <widget class="QWidget" name="Expenses_page"/>
             <widget class="QWidget" name="Purchases_page"/>
             <widget class="QWidget" name="Sales_page"/>
             <widget class="QWidget" name="Stock_page"/>
