@@ -68,6 +68,15 @@ MainWindow::MainWindow(QWidget *parent)
 
 
 
+    connect(ui->Settings_pushButton, &QPushButton::clicked, this, [=]() {
+        fadeSwitch(ui->stackedWidget->currentWidget(), ui->Settings_page);
+    });
+
+    connect(ui->Suppliers_pushButton, &QPushButton::clicked, this, [=]() {
+        fadeSwitch(ui->stackedWidget->currentWidget(), ui->Suppliers_page);
+    });
+
+
     // List of Cards Frames
     QList<QWidget*> cards = {
                               ui->DashBoardLogoframe, ui->Revenue_Card_frame,
@@ -104,7 +113,7 @@ void MainWindow::animatePageSwitch(QWidget* from, QWidget* to, int direction){
 
     // Animate the movement
     QPropertyAnimation* animFrom = new QPropertyAnimation(from, "pos");
-    animFrom->setDuration(1000);
+    animFrom->setDuration(300);
     animFrom->setStartValue(from->pos());
     animFrom->setEndValue(QPoint(-direction * width, 0));
 
@@ -128,7 +137,38 @@ void MainWindow::animatePageSwitch(QWidget* from, QWidget* to, int direction){
 
 
 
+void MainWindow::fadeSwitch(QWidget* from, QWidget* to)
+{
+    QGraphicsOpacityEffect* fromEffect = new QGraphicsOpacityEffect(from);
+    QGraphicsOpacityEffect* toEffect = new QGraphicsOpacityEffect(to);
 
+    from->setGraphicsEffect(fromEffect);
+    to->setGraphicsEffect(toEffect);
+
+    to->show();
+
+    QPropertyAnimation* animFrom = new QPropertyAnimation(fromEffect, "opacity");
+    animFrom->setDuration(400);
+    animFrom->setStartValue(1.0);
+    animFrom->setEndValue(0.0);
+
+    QPropertyAnimation* animTo = new QPropertyAnimation(toEffect, "opacity");
+    animTo->setDuration(400);
+    animTo->setStartValue(0.0);
+    animTo->setEndValue(1.0);
+
+    QParallelAnimationGroup* group = new QParallelAnimationGroup;
+    group->addAnimation(animFrom);
+    group->addAnimation(animTo);
+
+    connect(group, &QParallelAnimationGroup::finished, this, [=]() {
+        ui->stackedWidget->setCurrentWidget(to);
+        from->setGraphicsEffect(nullptr);
+        to->setGraphicsEffect(nullptr);
+    });
+
+    group->start(QAbstractAnimation::DeleteWhenStopped);
+}
 
 
 
