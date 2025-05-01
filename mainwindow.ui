@@ -52,7 +52,7 @@ border-radius: 8px;
 #Dashboard_pushButton:hover, #Expenses_pushButton:hover, #Purchases_pushButton:hover, #Reports_pushButton:hover, #Sales_pushButton:hover, #Stock_pushButton:hover, #Suppliers_pushButton:hover{
 	background-color: #413abc;
 	border-radius: 7px;
-	padding-left: 1px;
+	padding-left: 3px;
 }
 
 #About_pushButton:hover, #LogOut_pushButton:hover, #Settings_pushButton:hover{
@@ -320,6 +320,9 @@ border-radius: 8px;
              <font>
               <pointsize>9</pointsize>
              </font>
+            </property>
+            <property name="toolTip">
+             <string>Dashboard</string>
             </property>
             <property name="text">
              <string/>
