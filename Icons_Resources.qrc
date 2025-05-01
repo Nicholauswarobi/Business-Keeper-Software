@@ -871,5 +871,20 @@
         <file>Icons/Image/Logo.png</file>
         <file>Icons/Image/ProfilePC.png</file>
         <file>Icons/Image/Emblema ya BKS.png</file>
+        <file>Icons/Image/coins_566445.png</file>
+        <file>Icons/Image/diagram_566429.png</file>
+        <file>Icons/Image/in-stock (1).png</file>
+        <file>Icons/Image/in-stock.png</file>
+        <file>Icons/Image/investment.png</file>
+        <file>Icons/Image/out (1).png</file>
+        <file>Icons/Image/profit (1).png</file>
+        <file>Icons/Image/profit.png</file>
+        <file>Icons/Image/profit-up.png</file>
+        <file>Icons/Image/reduction (1).png</file>
+        <file>Icons/Image/reduction.png</file>
+        <file>Icons/Image/revenue (1).png</file>
+        <file>Icons/Image/revenue.png</file>
+        <file>Icons/Image/revenue_9926797.png</file>
+        <file>Icons/Image/trend.png</file>
     </qresource>
 </RCC>
