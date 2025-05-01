@@ -23,7 +23,7 @@
 QToolTip{
 background-color: #d9d1d5;
 color: #413abc;
-font-size: 12px;
+font: bold 12px 'Arial';
 padding: 4px;
 }
 
