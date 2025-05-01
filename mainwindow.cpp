@@ -15,9 +15,9 @@ MainWindow::MainWindow(QWidget *parent)
     // Apply drop down shadow
     for(QFrame* card : cards){
         QGraphicsDropShadowEffect* shadow= new QGraphicsDropShadowEffect(this);
-        shadow->setBlurRadius(25);
+        shadow->setBlurRadius(40);
         shadow->setOffset(6, 6);
-        shadow->setColor(QColor(0, 0, 0, 100));
+        shadow->setColor(QColor(0, 0, 0, 150));
         card->setGraphicsEffect(shadow);
 
     }
