@@ -4,6 +4,8 @@
 #include "QPropertyAnimation"
 #include "QParallelAnimationGroup"
 #include "QStackedWidget"
+#include <QGraphicsOpacityEffect>
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -91,6 +93,9 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::animatePageSwitch(QWidget* from, QWidget* to, int direction){
+    if (from == to)
+        return;
+
     int width = ui->stackedWidget->width();
 
     // Position the target page
@@ -99,7 +104,7 @@ void MainWindow::animatePageSwitch(QWidget* from, QWidget* to, int direction){
 
     // Animate the movement
     QPropertyAnimation* animFrom = new QPropertyAnimation(from, "pos");
-    animFrom->setDuration(300);
+    animFrom->setDuration(1000);
     animFrom->setStartValue(from->pos());
     animFrom->setEndValue(QPoint(-direction * width, 0));
 
