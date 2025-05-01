@@ -816,7 +816,7 @@ border-radius: 8px;
          <layout class="QVBoxLayout" name="verticalLayout_3">
           <item>
            <widget class="QStackedWidget" name="stackedWidget">
-            <widget class="QWidget" name="page">
+            <widget class="QWidget" name="Dashboard_page">
              <widget class="QPushButton" name="pushButton">
               <property name="geometry">
                <rect>
@@ -831,7 +831,14 @@ border-radius: 8px;
               </property>
              </widget>
             </widget>
-            <widget class="QWidget" name="page_2"/>
+            <widget class="QWidget" name="page_7"/>
+            <widget class="QWidget" name="page_6"/>
+            <widget class="QWidget" name="page_5"/>
+            <widget class="QWidget" name="page_4"/>
+            <widget class="QWidget" name="page_3"/>
+            <widget class="QWidget" name="Purchases_page"/>
+            <widget class="QWidget" name="Sales_page"/>
+            <widget class="QWidget" name="Stock_page"/>
            </widget>
           </item>
          </layout>
