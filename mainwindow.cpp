@@ -94,6 +94,15 @@ void MainWindow::animatePageSwitch(QWidget* from, QWidget* to, int direction){
     animTo->setStartValue(to->pos());
     animTo->setEndValue(QPoint(0, 0));
 
+    QParallelAnimationGroup* group = new QParallelAnimationGroup;
+    group->addAnimation(animFrom);
+    group->addAnimation(animTo);
+
+    connect(group, &QParallelAnimationGroup::finished, this, [=](){
+        ui->stackedWidget->setCurrentWidget(to);
+    });
+
+    group->start(QAbstractAnimation::DeleteWhenStopped);
 
 
 
