@@ -17,7 +17,7 @@ MainWindow::MainWindow(QWidget *parent)
         QGraphicsDropShadowEffect* shadow= new QGraphicsDropShadowEffect(this);
         shadow->setBlurRadius(25);
         shadow->setOffset(6, 6);
-        shadow->setColor(QColor(0, 0, 0, 80));
+        shadow->setColor(QColor(0, 0, 0, 100));
         card->setGraphicsEffect(shadow);
 
     }
