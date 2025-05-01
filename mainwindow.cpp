@@ -44,6 +44,10 @@ MainWindow::MainWindow(QWidget *parent)
         ui->stackedWidget->setCurrentWidget(ui->About_page);
     });
 
+    connect(ui->Expenses_pushButton, &QPushButton::clicked, this, [=](){
+        ui->stackedWidget->setCurrentWidget(ui->Expenses_page);
+    });
+
 
     // List of Cards Frames
     QList<QWidget*> cards = {
