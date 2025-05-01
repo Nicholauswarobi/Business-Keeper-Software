@@ -20,6 +20,13 @@
 	color: #060606;
 }
 
+QToolTip{
+background-color: #d9d1d5;
+color: #413abc;
+font-size: 12px;
+padding: 4px;
+}
+
 #centralwidget{
 	background-color: #eaeaea;
 }
@@ -225,6 +232,9 @@ border-radius: 8px;
               <pointsize>9</pointsize>
              </font>
             </property>
+            <property name="toolTip">
+             <string>Dashboard</string>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -322,7 +332,7 @@ border-radius: 8px;
              </font>
             </property>
             <property name="toolTip">
-             <string>Dashboard</string>
+             <string/>
             </property>
             <property name="text">
              <string/>
