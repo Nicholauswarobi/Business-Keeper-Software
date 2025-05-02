@@ -78,16 +78,16 @@ border-radius: 8px;
 
 #Notification_pushButton:hover, #Theme_pushButton:hover{
 	border-radius: 7px;
-	padding-left: 3px;
+	padding-top: 3px;
 	background-color: #BEC6ED;
 
 }
 
 #Notification_pushButton:checked, #Theme_pushButton:checked{
 	background-color: #D5DAF3;
-	border-left: 4px solid #603090;
+	border-top: 2px solid #603090;
 	border-top-left-radius: 7px;
-	border-bottom-left-radius: 7px;
+	border-top-right-radius: 7px;
 
 }
 
@@ -900,7 +900,7 @@ padding: 4px;
              <property name="bottomMargin">
               <number>0</number>
              </property>
-             <item>
+             <item alignment="Qt::AlignmentFlag::AlignHCenter">
               <widget class="QPushButton" name="Theme_pushButton">
                <property name="text">
                 <string/>
@@ -924,7 +924,7 @@ padding: 4px;
                </property>
               </widget>
              </item>
-             <item>
+             <item alignment="Qt::AlignmentFlag::AlignHCenter">
               <widget class="QPushButton" name="Notification_pushButton">
                <property name="text">
                 <string/>
