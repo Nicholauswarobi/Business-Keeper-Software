@@ -10,7 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     // Set Window Icon
-    this->setWindowIcon(QIcon(":/Icons/Image/Emblema ya BKS.png"));
+    this->setWindowIcon(QIcon(":/Icons/Image/BKSLogo.ico"));
 
     // Set Window Title
     this->setWindowTitle("Business Keeper Software");
