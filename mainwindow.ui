@@ -77,9 +77,10 @@ border-radius: 8px;
 }
 
 #Notification_pushButton:hover, #Theme_pushButton:hover{
-	border-radius: 7px;
 	padding-top: 3px;
 	background-color: #BEC6ED;
+	border: 1px solid #828eff;
+	border-radius: 6px;
 
 }
 
@@ -902,6 +903,9 @@ padding: 4px;
              </property>
              <item alignment="Qt::AlignmentFlag::AlignHCenter">
               <widget class="QPushButton" name="Theme_pushButton">
+               <property name="toolTip">
+                <string>Theme</string>
+               </property>
                <property name="text">
                 <string/>
                </property>
@@ -926,6 +930,9 @@ padding: 4px;
              </item>
              <item alignment="Qt::AlignmentFlag::AlignHCenter">
               <widget class="QPushButton" name="Notification_pushButton">
+               <property name="toolTip">
+                <string>Notification</string>
+               </property>
                <property name="text">
                 <string/>
                </property>
