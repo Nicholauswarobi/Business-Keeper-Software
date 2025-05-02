@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1022</width>
-    <height>703</height>
+    <width>1025</width>
+    <height>705</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -76,7 +76,7 @@ border-radius: 8px;
 	padding-left: 3px;
 }
 
-#Notification_pushButton:hover, #Theme_pushButton:hover{
+#Notification_pushButton:hover, #Theme_pushButton:hover, #Edit_Product_pushButton:hover, #New_Product_pushButton:hover, #Remove_Product_pushButton:hover{
 	padding-top: 3px;
 	background-color: #BEC6ED;
 	border: 1px solid #828eff;
@@ -84,11 +84,12 @@ border-radius: 8px;
 
 }
 
-#Notification_pushButton:checked, #Theme_pushButton:checked{
+#Notification_pushButton:checked, #Theme_pushButton:checked, #Edit_Product_pushButton:checked, #New_Product_pushButton:checked, #Remove_Product_pushButton:checked{
 	background-color: #D5DAF3;
 	border-top: 2px solid #603090;
 	border-top-left-radius: 7px;
 	border-top-right-radius: 7px;
+	font-weight: bold;
 
 }
 
@@ -109,7 +110,7 @@ border-radius: 8px;
 	border-radius: 20px;
 }
 
-#Duration_comboBox, #Products_comboBox{
+#Duration_comboBox, #Products_comboBox, #Select_Category_comboBox, #Select_Date_comboBox{
 background-color: #D4EEFB;
 	border: 1px solid #603090;
 	border-radius: 6px;
@@ -118,19 +119,19 @@ background-color: #D4EEFB;
 }
 
 
-#Duration_comboBox:hover, #Products_comboBox:hover{
+#Duration_comboBox:hover, #Products_comboBox:hover, #Select_Category_comboBox:hover, #Select_Date_comboBox:hover{
 
 	border: 1px solid #828eff;
 }
 
-#Duration_comboBox::down-arrow, #Products_comboBox::down-arrow{
+#Duration_comboBox::down-arrow, #Products_comboBox::down-arrow, #Select_Category_comboBox::down-arrow, #Select_Date_comboBox::down-arrow{
 	image: url(:/Blue/Icons/BlueIcons/chevron-down.svg);
 	width: 20px;
 	height: 12px;
 }
 
 
-#Duration_comboBox QAbstractItemView, #Products_comboBox QAbstractItemView{
+#Duration_comboBox QAbstractItemView, #Products_comboBox QAbstractItemView, #Select_Category_comboBox QAbstractItemView, #Select_Date_comboBox QAbstractItemView{
 background-color: #D4EEFB;
 border: 1px solid #acffc8;
 selection-background-color: #423AC1;
@@ -237,13 +238,13 @@ padding: 4px;
             <property name="minimumSize">
              <size>
               <width>70</width>
-              <height>60</height>
+              <height>70</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>50</width>
-              <height>60</height>
+              <width>70</width>
+              <height>70</height>
              </size>
             </property>
             <property name="text">
@@ -903,6 +904,9 @@ padding: 4px;
              </property>
              <item alignment="Qt::AlignmentFlag::AlignHCenter">
               <widget class="QPushButton" name="Theme_pushButton">
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
                <property name="toolTip">
                 <string>Theme</string>
                </property>
@@ -911,8 +915,8 @@ padding: 4px;
                </property>
                <property name="icon">
                 <iconset resource="Icons_Resources.qrc">
-                 <normaloff>:/Blue/Icons/BlueIcons/moon.svg</normaloff>
-                 <normalon>:/Dark/Icons/DarkIcons/moon.svg</normalon>:/Blue/Icons/BlueIcons/moon.svg</iconset>
+                 <normaloff>:/Blue/Icons/BlueIcons/sun.svg</normaloff>
+                 <normalon>:/Dark/Icons/DarkIcons/moon.svg</normalon>:/Blue/Icons/BlueIcons/sun.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -923,6 +927,9 @@ padding: 4px;
                <property name="checkable">
                 <bool>true</bool>
                </property>
+               <property name="checked">
+                <bool>false</bool>
+               </property>
                <property name="autoExclusive">
                 <bool>true</bool>
                </property>
@@ -930,6 +937,9 @@ padding: 4px;
              </item>
              <item alignment="Qt::AlignmentFlag::AlignHCenter">
               <widget class="QPushButton" name="Notification_pushButton">
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
                <property name="toolTip">
                 <string>Notification</string>
                </property>
@@ -2287,20 +2297,175 @@ padding: 4px;
              </layout>
             </widget>
             <widget class="QWidget" name="Stock_page">
-             <layout class="QHBoxLayout" name="horizontalLayout_22">
+             <layout class="QVBoxLayout" name="verticalLayout_17">
               <item>
-               <widget class="QLabel" name="label_36">
-                <property name="font">
-                 <font>
-                  <pointsize>50</pointsize>
-                 </font>
+               <widget class="QWidget" name="widget" native="true">
+                <layout class="QHBoxLayout" name="horizontalLayout_22">
+                 <item alignment="Qt::AlignmentFlag::AlignTop">
+                  <widget class="QLabel" name="label_10">
+                   <property name="font">
+                    <font>
+                     <pointsize>20</pointsize>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>Stock Overview</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QWidget" name="filterBox_widget" native="true">
+                <layout class="QHBoxLayout" name="horizontalLayout_9">
+                 <item>
+                  <widget class="QPushButton" name="New_Product_pushButton">
+                   <property name="font">
+                    <font>
+                     <pointsize>12</pointsize>
+                    </font>
+                   </property>
+                   <property name="cursor">
+                    <cursorShape>PointingHandCursor</cursorShape>
+                   </property>
+                   <property name="text">
+                    <string>New</string>
+                   </property>
+                   <property name="icon">
+                    <iconset resource="Icons_Resources.qrc">
+                     <normaloff>:/Blue/Icons/BlueIcons/plus-square.svg</normaloff>
+                     <normalon>:/Dark/Icons/DarkIcons/plus-square.svg</normalon>:/Blue/Icons/BlueIcons/plus-square.svg</iconset>
+                   </property>
+                   <property name="iconSize">
+                    <size>
+                     <width>30</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="checkable">
+                    <bool>true</bool>
+                   </property>
+                   <property name="autoExclusive">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="Edit_Product_pushButton">
+                   <property name="font">
+                    <font>
+                     <pointsize>13</pointsize>
+                    </font>
+                   </property>
+                   <property name="cursor">
+                    <cursorShape>PointingHandCursor</cursorShape>
+                   </property>
+                   <property name="text">
+                    <string>Edit</string>
+                   </property>
+                   <property name="icon">
+                    <iconset resource="Icons_Resources.qrc">
+                     <normaloff>:/Blue/Icons/BlueIcons/edit.svg</normaloff>
+                     <normalon>:/Dark/Icons/DarkIcons/edit.svg</normalon>:/Blue/Icons/BlueIcons/edit.svg</iconset>
+                   </property>
+                   <property name="iconSize">
+                    <size>
+                     <width>30</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="checkable">
+                    <bool>true</bool>
+                   </property>
+                   <property name="autoExclusive">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="Remove_Product_pushButton">
+                   <property name="font">
+                    <font>
+                     <pointsize>13</pointsize>
+                    </font>
+                   </property>
+                   <property name="cursor">
+                    <cursorShape>PointingHandCursor</cursorShape>
+                   </property>
+                   <property name="text">
+                    <string>Remove</string>
+                   </property>
+                   <property name="icon">
+                    <iconset resource="Icons_Resources.qrc">
+                     <normaloff>:/Blue/Icons/BlueIcons/trash-2.svg</normaloff>
+                     <normalon>:/Dark/Icons/DarkIcons/trash-2.svg</normalon>:/Blue/Icons/BlueIcons/trash-2.svg</iconset>
+                   </property>
+                   <property name="iconSize">
+                    <size>
+                     <width>30</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="checkable">
+                    <bool>true</bool>
+                   </property>
+                   <property name="autoExclusive">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="Select_Date_comboBox">
+                   <property name="font">
+                    <font>
+                     <pointsize>13</pointsize>
+                    </font>
+                   </property>
+                   <property name="cursor">
+                    <cursorShape>PointingHandCursor</cursorShape>
+                   </property>
+                   <item>
+                    <property name="text">
+                     <string>Select Date</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="Select_Category_comboBox">
+                   <property name="font">
+                    <font>
+                     <pointsize>13</pointsize>
+                    </font>
+                   </property>
+                   <property name="cursor">
+                    <cursorShape>PointingHandCursor</cursorShape>
+                   </property>
+                   <item>
+                    <property name="text">
+                     <string>Select Category</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QWidget" name="widget_3" native="true">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
                 </property>
-                <property name="text">
-                 <string>STOCK/PRODUCTS PAGE</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignmentFlag::AlignCenter</set>
-                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_18">
+                 <item>
+                  <widget class="QTableView" name="tableView"/>
+                 </item>
+                </layout>
                </widget>
               </item>
              </layout>
