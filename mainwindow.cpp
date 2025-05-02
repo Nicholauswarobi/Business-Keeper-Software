@@ -1,12 +1,19 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include "QGraphicsDropShadowEffect"
+#include "QIcon"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    // Set Window Icon
+    this->setWindowIcon(QIcon(":/Icons/Image/Emblema ya BKS.png"));
+
+    // Set Window Title
+    this->setWindowTitle("Business Keeper Software");
 
     // Navigate to Page when pushButton is clicked
     connect(ui->Dashboard_pushButton, &QPushButton::clicked, this, [=](){
