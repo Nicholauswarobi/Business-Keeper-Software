@@ -766,7 +766,7 @@ padding: 4px;
               <widget class="QLabel" name="label_39">
                <property name="font">
                 <font>
-                 <pointsize>30</pointsize>
+                 <pointsize>29</pointsize>
                  <bold>true</bold>
                 </font>
                </property>
