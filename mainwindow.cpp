@@ -74,11 +74,11 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Apply this inside your MainWindow constructor or relevant function
     QGraphicsDropShadowEffect *shadow = new QGraphicsDropShadowEffect(this);
-    shadow->setBlurRadius(40);                   // Adjust for softness
-    shadow->setColor(QColor(0, 0, 0, 150));      // Semi-transparent black
-    shadow->setOffset(0, 8);                     // X = 0, Y = 8 (only downward shadow)
+    shadow->setBlurRadius(40);
+    shadow->setColor(QColor(0, 0, 0, 150));
+    shadow->setOffset(0, 8);
 
-    ui->Header_widget->setGraphicsEffect(shadow);        // Replace with your actual widget
+    ui->Header_widget->setGraphicsEffect(shadow);
 
 }
 
