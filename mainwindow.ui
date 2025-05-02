@@ -35,6 +35,10 @@ padding: 4px;
 	background-color: #D4EEFB;
 }
 
+#Header_widget{
+    background-color: #9BC9FF;
+}
+
 #LeftSideMenuwidget{
 	background-color: qlineargradient(spread:pad, x1:0.459, y1:1, x2:0.525453, y2:0.091, stop:0 rgba(70, 63, 204, 255), stop:0.793296 rgba(32, 28, 87, 255));
 }
@@ -1753,6 +1757,18 @@ padding: 4px;
                  </item>
                  <item>
                   <widget class="QFrame" name="Trend_Frame">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
                    <property name="frameShape">
                     <enum>QFrame::Shape::StyledPanel</enum>
                    </property>

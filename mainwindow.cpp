@@ -66,11 +66,20 @@ MainWindow::MainWindow(QWidget *parent)
     for(QWidget* card : cards){
         QGraphicsDropShadowEffect* shadow= new QGraphicsDropShadowEffect(this);
         shadow->setBlurRadius(40);
-        shadow->setOffset(6, 6);
+        shadow->setOffset(0, 8);
         shadow->setColor(QColor(0, 120, 255, 150));
         card->setGraphicsEffect(shadow);
 
     }
+
+    // Apply this inside your MainWindow constructor or relevant function
+    QGraphicsDropShadowEffect *shadow = new QGraphicsDropShadowEffect(this);
+    shadow->setBlurRadius(40);                   // Adjust for softness
+    shadow->setColor(QColor(0, 0, 0, 150));      // Semi-transparent black
+    shadow->setOffset(0, 8);                     // X = 0, Y = 8 (only downward shadow)
+
+    ui->Header_widget->setGraphicsEffect(shadow);        // Replace with your actual widget
+
 }
 
 
