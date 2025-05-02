@@ -76,6 +76,21 @@ border-radius: 8px;
 	padding-left: 3px;
 }
 
+#Notification_pushButton:hover, #Theme_pushButton:hover{
+	border-radius: 7px;
+	padding-left: 3px;
+	background-color: #BEC6ED;
+
+}
+
+#Notification_pushButton:checked, #Theme_pushButton:checked{
+	background-color: #D5DAF3;
+	border-left: 4px solid #603090;
+	border-top-left-radius: 7px;
+	border-bottom-left-radius: 7px;
+
+}
+
 
 #Dashboard_pushButton:checked, #Expenses_pushButton:checked, #Purchases_pushButton:checked, #Reports_pushButton:checked, #Sales_pushButton:checked, #Stock_pushButton:checked, #Suppliers_pushButton:checked, #About_pushButton:checked, #LogOut_pushButton:checked,#Settings_pushButton:checked{
 	
