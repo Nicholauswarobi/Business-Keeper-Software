@@ -76,7 +76,7 @@ border-radius: 8px;
 	padding-left: 3px;
 }
 
-#Notification_pushButton:hover, #Theme_pushButton:hover, #Edit_Product_pushButton:hover, #New_Product_pushButton:hover, #Remove_Product_pushButton:hover, #Sales_Category_comboBox:hover{
+#Notification_pushButton:hover, #Theme_pushButton:hover, #Edit_Product_pushButton:hover, #New_Product_pushButton:hover, #Remove_Product_pushButton:hover, #Sales_Edit_pushButton:hover, #Sales_Remove_pushButton:hover, #Sales_View_pushButton:hover{
 	padding-top: 3px;
 	background-color: #BEC6ED;
 	border: 1px solid #828eff;
@@ -84,7 +84,7 @@ border-radius: 8px;
 
 }
 
-#Notification_pushButton:checked, #Theme_pushButton:checked, #Edit_Product_pushButton:checked, #New_Product_pushButton:checked, #Remove_Product_pushButton:checked{
+#Notification_pushButton:checked, #Theme_pushButton:checked, #Edit_Product_pushButton:checked, #New_Product_pushButton:checked, #Remove_Product_pushButton:checked, #Sales_Edit_pushButton:checked, #Sales_Remove_pushButton:checked, #Sales_View_pushButton:checked{
 	background-color: #D5DAF3;
 	border-top: 2px solid #603090;
 	border-top-left-radius: 7px;
