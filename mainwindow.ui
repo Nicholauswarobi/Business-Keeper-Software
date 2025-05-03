@@ -2298,6 +2298,19 @@ padding: 4px;
                    </property>
                   </widget>
                  </item>
+                 <item alignment="Qt::AlignmentFlag::AlignRight">
+                  <widget class="QLabel" name="label_11">
+                   <property name="font">
+                    <font>
+                     <pointsize>13</pointsize>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>Show Day and Date</string>
+                   </property>
+                  </widget>
+                 </item>
                 </layout>
                </widget>
               </item>
