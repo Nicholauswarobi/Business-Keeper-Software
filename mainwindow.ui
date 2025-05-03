@@ -2545,26 +2545,6 @@ padding: 4px;
                   </widget>
                  </item>
                  <item>
-                  <widget class="QComboBox" name="Select_Date_comboBox">
-                   <property name="font">
-                    <font>
-                     <pointsize>13</pointsize>
-                    </font>
-                   </property>
-                   <property name="cursor">
-                    <cursorShape>PointingHandCursor</cursorShape>
-                   </property>
-                   <property name="toolTip">
-                    <string>Filter by Date</string>
-                   </property>
-                   <item>
-                    <property name="text">
-                     <string>Select Date</string>
-                    </property>
-                   </item>
-                  </widget>
-                 </item>
-                 <item>
                   <widget class="QComboBox" name="Select_Category_comboBox">
                    <property name="font">
                     <font>
@@ -2580,6 +2560,26 @@ padding: 4px;
                    <item>
                     <property name="text">
                      <string>Select Category</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="Select_Date_comboBox">
+                   <property name="font">
+                    <font>
+                     <pointsize>13</pointsize>
+                    </font>
+                   </property>
+                   <property name="cursor">
+                    <cursorShape>PointingHandCursor</cursorShape>
+                   </property>
+                   <property name="toolTip">
+                    <string>Filter by Date</string>
+                   </property>
+                   <item>
+                    <property name="text">
+                     <string>Select Date</string>
                     </property>
                    </item>
                   </widget>
