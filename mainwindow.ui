@@ -2305,7 +2305,7 @@ padding: 4px;
                <widget class="QWidget" name="widget_4" native="true">
                 <layout class="QHBoxLayout" name="horizontalLayout_27">
                  <item>
-                  <widget class="QComboBox" name="comboBox">
+                  <widget class="QComboBox" name="Sales_Category_comboBox">
                    <property name="font">
                     <font>
                      <pointsize>13</pointsize>
