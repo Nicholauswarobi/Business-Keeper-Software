@@ -76,7 +76,7 @@ border-radius: 8px;
 	padding-left: 3px;
 }
 
-#Notification_pushButton:hover, #Theme_pushButton:hover, #Edit_Product_pushButton:hover, #New_Product_pushButton:hover, #Remove_Product_pushButton:hover{
+#Notification_pushButton:hover, #Theme_pushButton:hover, #Edit_Product_pushButton:hover, #New_Product_pushButton:hover, #Remove_Product_pushButton:hover, #Sales_Category_comboBox:hover{
 	padding-top: 3px;
 	background-color: #BEC6ED;
 	border: 1px solid #828eff;
@@ -110,7 +110,7 @@ border-radius: 8px;
 	border-radius: 20px;
 }
 
-#Duration_comboBox, #Products_comboBox, #Select_Category_comboBox, #Select_Date_comboBox{
+#Duration_comboBox, #Products_comboBox, #Select_Category_comboBox, #Select_Date_comboBox, #Sales_Category_comboBox{
 background-color: #D4EEFB;
 	border: 1px solid #603090;
 	border-radius: 6px;
@@ -119,19 +119,19 @@ background-color: #D4EEFB;
 }
 
 
-#Duration_comboBox:hover, #Products_comboBox:hover, #Select_Category_comboBox:hover, #Select_Date_comboBox:hover{
+#Duration_comboBox:hover, #Products_comboBox:hover, #Select_Category_comboBox:hover, #Select_Date_comboBox:hover, #Sales_Category_comboBox:hover{
 
 	border: 1px solid #828eff;
 }
 
-#Duration_comboBox::down-arrow, #Products_comboBox::down-arrow, #Select_Category_comboBox::down-arrow, #Select_Date_comboBox::down-arrow{
+#Duration_comboBox::down-arrow, #Products_comboBox::down-arrow, #Select_Category_comboBox::down-arrow, #Select_Date_comboBox::down-arrow, #Sales_Category_comboBox::down-arrow{
 	image: url(:/Blue/Icons/BlueIcons/chevron-down.svg);
 	width: 20px;
 	height: 12px;
 }
 
 
-#Duration_comboBox QAbstractItemView, #Products_comboBox QAbstractItemView, #Select_Category_comboBox QAbstractItemView, #Select_Date_comboBox QAbstractItemView{
+#Duration_comboBox QAbstractItemView, #Products_comboBox QAbstractItemView, #Select_Category_comboBox QAbstractItemView, #Select_Date_comboBox QAbstractItemView, #Sales_Category_comboBox QAbstractItemView{
 background-color: #D4EEFB;
 border: 1px solid #acffc8;
 selection-background-color: #423AC1;
@@ -2302,7 +2302,7 @@ padding: 4px;
                </widget>
               </item>
               <item>
-               <widget class="QWidget" name="widget_4" native="true">
+               <widget class="QWidget" name="Sales_filterBox_widget" native="true">
                 <layout class="QHBoxLayout" name="horizontalLayout_27">
                  <item>
                   <widget class="QComboBox" name="Sales_Category_comboBox">
@@ -2447,7 +2447,7 @@ padding: 4px;
                </widget>
               </item>
               <item>
-               <widget class="QWidget" name="filterBox_widget" native="true">
+               <widget class="QWidget" name="Product_filterBox_widget" native="true">
                 <layout class="QHBoxLayout" name="horizontalLayout_9">
                  <item>
                   <widget class="QPushButton" name="New_Product_pushButton">
