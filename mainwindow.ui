@@ -2279,18 +2279,19 @@ padding: 4px;
             </widget>
             <widget class="QWidget" name="Sales_page">
              <layout class="QVBoxLayout" name="verticalLayout_19">
-              <item>
+              <item alignment="Qt::AlignmentFlag::AlignTop">
                <widget class="QWidget" name="widget_2" native="true">
                 <layout class="QHBoxLayout" name="horizontalLayout_20">
-                 <item>
+                 <item alignment="Qt::AlignmentFlag::AlignLeft">
                   <widget class="QLabel" name="label_34">
                    <property name="font">
                     <font>
-                     <pointsize>50</pointsize>
+                     <pointsize>20</pointsize>
+                     <bold>true</bold>
                     </font>
                    </property>
                    <property name="text">
-                    <string>SALES</string>
+                    <string>Sales Overview</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -2302,59 +2303,125 @@ padding: 4px;
               </item>
               <item>
                <widget class="QWidget" name="widget_4" native="true">
-                <widget class="QPushButton" name="pushButton">
-                 <property name="geometry">
-                  <rect>
-                   <x>470</x>
-                   <y>60</y>
-                   <width>80</width>
-                   <height>24</height>
-                  </rect>
-                 </property>
-                 <property name="text">
-                  <string>PushButton</string>
-                 </property>
-                </widget>
-                <widget class="QComboBox" name="comboBox">
-                 <property name="geometry">
-                  <rect>
-                   <x>200</x>
-                   <y>80</y>
-                   <width>72</width>
-                   <height>24</height>
-                  </rect>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="pushButton_2">
-                 <property name="geometry">
-                  <rect>
-                   <x>600</x>
-                   <y>80</y>
-                   <width>80</width>
-                   <height>24</height>
-                  </rect>
-                 </property>
-                 <property name="text">
-                  <string>PushButton</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="pushButton_3">
-                 <property name="geometry">
-                  <rect>
-                   <x>750</x>
-                   <y>100</y>
-                   <width>80</width>
-                   <height>24</height>
-                  </rect>
-                 </property>
-                 <property name="text">
-                  <string>PushButton</string>
-                 </property>
-                </widget>
+                <layout class="QHBoxLayout" name="horizontalLayout_27">
+                 <item>
+                  <widget class="QComboBox" name="comboBox">
+                   <property name="font">
+                    <font>
+                     <pointsize>13</pointsize>
+                    </font>
+                   </property>
+                   <item>
+                    <property name="text">
+                     <string>Select Category</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButton">
+                   <property name="font">
+                    <font>
+                     <pointsize>13</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>View</string>
+                   </property>
+                   <property name="icon">
+                    <iconset resource="Icons_Resources.qrc">
+                     <normaloff>:/Blue/Icons/BlueIcons/eye.svg</normaloff>
+                     <normalon>:/Dark/Icons/DarkIcons/eye.svg</normalon>:/Blue/Icons/BlueIcons/eye.svg</iconset>
+                   </property>
+                   <property name="iconSize">
+                    <size>
+                     <width>30</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="checkable">
+                    <bool>true</bool>
+                   </property>
+                   <property name="autoExclusive">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButton_2">
+                   <property name="font">
+                    <font>
+                     <pointsize>13</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>Edit</string>
+                   </property>
+                   <property name="icon">
+                    <iconset resource="Icons_Resources.qrc">
+                     <normaloff>:/Blue/Icons/BlueIcons/edit.svg</normaloff>
+                     <normalon>:/Dark/Icons/DarkIcons/edit.svg</normalon>:/Blue/Icons/BlueIcons/edit.svg</iconset>
+                   </property>
+                   <property name="iconSize">
+                    <size>
+                     <width>30</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="checkable">
+                    <bool>true</bool>
+                   </property>
+                   <property name="autoExclusive">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButton_3">
+                   <property name="font">
+                    <font>
+                     <pointsize>13</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>Remove</string>
+                   </property>
+                   <property name="icon">
+                    <iconset resource="Icons_Resources.qrc">
+                     <normaloff>:/Blue/Icons/BlueIcons/trash-2.svg</normaloff>
+                     <normalon>:/Dark/Icons/DarkIcons/trash-2.svg</normalon>:/Blue/Icons/BlueIcons/trash-2.svg</iconset>
+                   </property>
+                   <property name="iconSize">
+                    <size>
+                     <width>30</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="checkable">
+                    <bool>true</bool>
+                   </property>
+                   <property name="autoExclusive">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
                </widget>
               </item>
               <item>
-               <widget class="QWidget" name="widget_5" native="true"/>
+               <widget class="QWidget" name="widget_5" native="true">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_20">
+                 <item>
+                  <widget class="QTableView" name="tableView"/>
+                 </item>
+                </layout>
+               </widget>
               </item>
              </layout>
             </widget>
