@@ -2311,6 +2311,9 @@ padding: 4px;
                      <pointsize>13</pointsize>
                     </font>
                    </property>
+                   <property name="toolTip">
+                    <string>Select Category</string>
+                   </property>
                    <item>
                     <property name="text">
                      <string>Select Category</string>
@@ -2324,6 +2327,9 @@ padding: 4px;
                     <font>
                      <pointsize>13</pointsize>
                     </font>
+                   </property>
+                   <property name="toolTip">
+                    <string>View products</string>
                    </property>
                    <property name="text">
                     <string>View</string>
@@ -2354,6 +2360,9 @@ padding: 4px;
                      <pointsize>13</pointsize>
                     </font>
                    </property>
+                   <property name="toolTip">
+                    <string>Edit sale`s product</string>
+                   </property>
                    <property name="text">
                     <string>Edit</string>
                    </property>
@@ -2382,6 +2391,9 @@ padding: 4px;
                     <font>
                      <pointsize>13</pointsize>
                     </font>
+                   </property>
+                   <property name="toolTip">
+                    <string>Remove sale`s product</string>
                    </property>
                    <property name="text">
                     <string>Remove</string>
@@ -2490,6 +2502,12 @@ padding: 4px;
                     <font>
                      <pointsize>13</pointsize>
                     </font>
+                   </property>
+                   <property name="cursor">
+                    <cursorShape>PointingHandCursor</cursorShape>
+                   </property>
+                   <property name="toolTip">
+                    <string>View product details</string>
                    </property>
                    <property name="text">
                     <string>View</string>
