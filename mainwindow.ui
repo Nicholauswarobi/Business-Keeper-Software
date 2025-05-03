@@ -2319,7 +2319,7 @@ padding: 4px;
                   </widget>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="pushButton">
+                  <widget class="QPushButton" name="Sales_View_pushButton">
                    <property name="font">
                     <font>
                      <pointsize>13</pointsize>
@@ -2348,7 +2348,7 @@ padding: 4px;
                   </widget>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="pushButton_2">
+                  <widget class="QPushButton" name="Sales_Edit_pushButton">
                    <property name="font">
                     <font>
                      <pointsize>13</pointsize>
@@ -2377,7 +2377,7 @@ padding: 4px;
                   </widget>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="pushButton_3">
+                  <widget class="QPushButton" name="Sales_Remove_pushButton">
                    <property name="font">
                     <font>
                      <pointsize>13</pointsize>
