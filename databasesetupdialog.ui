@@ -6,12 +6,76 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>534</width>
-    <height>338</height>
+    <width>514</width>
+    <height>377</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">*{
+border: none;
+color: black;
+}
+
+#DatabaseSetupDialog{
+	background-color: #617FA2;
+
+}
+
+    QRadioButton {
+    color: black;
+     spacing: 10px;
+    }
+
+
+    QRadioButton::indicator {
+    width: 15px;
+    height: 15px;
+    border-radius: 7px;
+     border: 2px solid #BEC6ED;
+     background: white;
+    }
+
+
+    QRadioButton::indicator:checked {
+    background-color: #0078D7;
+    border: 2px solid #87599e;
+    }
+
+
+    QRadioButton::indicator:hover {
+    border: 2px solid #0ED2B3;
+  }
+
+
+    QRadioButton::indicator:disabled {
+    background: #939393;
+    border: 2px solid #7296a1;
+    }
+
+
+QLineEdit {
+    border: 2px solid #8f8f91;
+    border-radius: 8px;
+    padding: 4px;
+    background: #ffffff;
+    selection-background-color: #0078d7;
+
+}
+
+QLineEdit:focus {
+    border: 2px solid #0078d7;
+    background: #e6f2ff;
+}
+
+QLineEdit:disabled {
+    background: #f0f0f0;
+    color: #a0a0a0;
+    border: 2px solid #dcdcdc;
+}
+</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -45,7 +109,7 @@
       </sizepolicy>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_4">
-      <item>
+      <item alignment="Qt::AlignmentFlag::AlignLeft">
        <widget class="QRadioButton" name="Local_radioButton">
         <property name="font">
          <font>
@@ -57,7 +121,7 @@
         </property>
        </widget>
       </item>
-      <item>
+      <item alignment="Qt::AlignmentFlag::AlignRight">
        <widget class="QRadioButton" name="Cloud_radioButton">
         <property name="font">
          <font>
