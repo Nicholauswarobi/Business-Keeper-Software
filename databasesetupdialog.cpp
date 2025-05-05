@@ -12,3 +12,9 @@ DatabaseSetupDialog::~DatabaseSetupDialog()
 {
     delete ui;
 }
+
+void DatabaseSetupDialog::on_Configure_pushButton_clicked()
+{
+
+}
+
