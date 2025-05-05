@@ -24,6 +24,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         Icons_Resources.qrc
+        databasesetupdialog.h databasesetupdialog.cpp databasesetupdialog.ui
 
     )
 # Define target properties for Android with Qt 6 as:
