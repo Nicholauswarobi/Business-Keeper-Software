@@ -1,5 +1,8 @@
 #include "databasesetupdialog.h"
 #include "ui_databasesetupdialog.h"
+#include <QSettings>
+#include <QMessageBox>
+#include <QSqlDatabase>
 
 DatabaseSetupDialog::DatabaseSetupDialog(QWidget *parent)
     : QDialog(parent)
@@ -13,7 +16,7 @@ DatabaseSetupDialog::~DatabaseSetupDialog()
     delete ui;
 }
 
-void DatabaseSetupDialog::on_Configure_pushButton_clicked()
+void DatabaseSetupDialog::on_Configure_pushButton_Accepted()
 {
 
 }
