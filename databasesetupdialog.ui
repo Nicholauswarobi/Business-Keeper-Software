@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>518</width>
-    <height>534</height>
+    <height>544</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -90,7 +90,38 @@ QPushButton:pressed {
     background-color: #003e73;
 }
 
-</string>
+
+
+
+QComboBox{
+background-color: #D4EEFB;
+	border: 1px solid #603090;
+	border-radius: 6px;
+	padding: 4px 10px;
+	min-width: 50px;
+}
+
+
+QComboBox:hover{
+
+	border: 1px solid #828eff;
+}
+
+QComboBox::down-arrow{
+	image: url(:/Blue/Icons/BlueIcons/chevron-down.svg);
+	width: 20px;
+	height: 12px;
+}
+
+
+QComboBox QAbstractItemView{
+background-color: #D4EEFB;
+border: 1px solid #acffc8;
+selection-background-color: #423AC1;
+selection-color: #0F2771;
+foint-size: 13px;
+padding: 4px;
+}</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -289,7 +320,7 @@ QPushButton:pressed {
         </property>
        </widget>
       </item>
-      <item alignment="Qt::AlignmentFlag::AlignRight">
+      <item alignment="Qt::AlignmentFlag::AlignLeft">
        <widget class="QRadioButton" name="Cloud_radioButton">
         <property name="font">
          <font>
@@ -299,6 +330,20 @@ QPushButton:pressed {
         <property name="text">
          <string>Cloud</string>
         </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="CloudProvider_comboBox">
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <item>
+         <property name="text">
+          <string>Cloud Provider</string>
+         </property>
+        </item>
        </widget>
       </item>
      </layout>
