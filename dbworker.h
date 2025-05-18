@@ -10,6 +10,9 @@ class DbWorker : public QObject
 public:
     explicit DbWorker(QObject *parent = nullptr);
 
+    bool doesDatabaseExist(const QString &host, const QString &user,
+                        const QString &password, const QString &dbName);
+
 public slots:
     void setupDatabase(const QString &host, const QString &user,
                        const QString &password, const QString &dbName, bool createIfNotExist);

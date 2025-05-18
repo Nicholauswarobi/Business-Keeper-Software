@@ -31,6 +31,26 @@ DatabaseSetupDialog::~DatabaseSetupDialog()
     delete ui;
 }
 
+QString DatabaseSetupDialog::getHost() const {
+    return ui->HostName_lineEdit->text().trimmed();
+}
+
+QString DatabaseSetupDialog::getUser() const {
+    return ui->Username_lineEdit->text().trimmed();
+}
+
+QString DatabaseSetupDialog::getPassword() const {
+    return ui->Password_lineEdit->text().trimmed();
+}
+
+QString DatabaseSetupDialog::getDbName() const {
+    return ui->DatabaseName_lineEdit->text().trimmed();
+}
+
+QString DatabaseSetupDialog::getOrganizationName() const {
+    return ui->OrganizationName_lineEdit->text().trimmed();
+}
+
 void DatabaseSetupDialog::on_Configure_pushButton_clicked()
 {
     qDebug() << "Configure button clicked.";
@@ -52,6 +72,7 @@ void DatabaseSetupDialog::onDatabaseSetupFinished(bool success, const QString &m
         accept(); // Close the dialog and proceed to the main window
     } else {
         QMessageBox::critical(this, "Database Setup Failed", message);
+        qDebug() << "Database setup failed with message:" << message;
     }
 }
 

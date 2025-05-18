@@ -16,9 +16,10 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+    MainWindow(const QString &organizationName, QWidget *parent = nullptr);
     ~MainWindow();
 
+    void setOrganizationName(const QString &organizationName);
 private:
     Ui::MainWindow *ui;
     DbWorker *worker;

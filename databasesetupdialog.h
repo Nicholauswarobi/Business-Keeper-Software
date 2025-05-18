@@ -17,6 +17,12 @@ public:
     explicit DatabaseSetupDialog(QWidget *parent = nullptr);
     ~DatabaseSetupDialog();
 
+    QString getHost() const;
+    QString getUser() const;
+    QString getPassword() const;
+    QString getDbName() const;
+    QString getOrganizationName() const;
+
 signals:
     void setupDatabase(const QString &host, const QString &user,
                        const QString &password, const QString &dbName, bool createIfNotExist);

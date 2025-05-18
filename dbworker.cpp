@@ -37,6 +37,23 @@ void DbWorker::setupDatabase(const QString &host, const QString &user,
         }
 
         qDebug() << "Connected to database successfully.";
+
+        // Create the categories table
+        QSqlQuery query(db);
+        QString createTableQuery = R"(
+            CREATE TABLE IF NOT EXISTS categories (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                name VARCHAR(255) UNIQUE NOT NULL,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+            )
+        )";
+
+        if (!query.exec(createTableQuery)) {
+            throw std::runtime_error(QString("Failed to create categories table: %1").arg(query.lastError().text()).toStdString());
+        }
+
+        qDebug() << "Categories table created successfully.";
         emit databaseSetupFinished(true, "Database setup successfully.");
 
         // Remove the database connection
@@ -103,4 +120,25 @@ void DbWorker::addColumnToCategoryTable(const QString &tableName, const QString 
     } else {
         emit databaseSetupFinished(true, QString("Column '%1' added to table '%2'.").arg(columnName, tableName));
     }
+}
+
+bool DbWorker::doesDatabaseExist(const QString &host, const QString &user,
+                        const QString &password, const QString &dbName){
+    QString connectionName = QString("check_db_connection_%1").arg(reinterpret_cast<quintptr>(QThread::currentThreadId()));
+    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL", connectionName);
+    db.setHostName(host);
+    db.setUserName(user);
+    db.setPassword(password);
+    db.setDatabaseName(dbName);
+
+    if (db.open()){
+        qDebug()<< "Database exists and connection successfully.";
+        QSqlDatabase::removeDatabase(connectionName);
+        return true;
+    }else{
+        qDebug()<< "Database does not exist and connection failed." << db.lastError().text();
+        QSqlDatabase::removeDatabase(connectionName);
+        return false;
+    }
+                            
 }

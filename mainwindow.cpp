@@ -7,11 +7,13 @@
 #include <QSqlError>
 #include <QMessageBox>
 
-MainWindow::MainWindow(QWidget *parent)
+MainWindow::MainWindow(const QString &organizationName, QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    setOrganizationName(organizationName);
 
     // Set Window Icon
     this->setWindowIcon(QIcon(":/Icons/Image/BKSLogo.ico"));
@@ -117,6 +119,12 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(workerThread, &QThread::finished, worker, &QObject::deleteLater);
     workerThread->start();
+}
+
+void MainWindow::setOrganizationName(const QString &organizationName){
+    if (ui->OrgName_Label){
+        ui->OrgName_Label->setText(organizationName);
+    }
 }
 
 

@@ -780,7 +780,7 @@ padding: 4px;
               <number>0</number>
              </property>
              <item alignment="Qt::AlignmentFlag::AlignHCenter">
-              <widget class="QLabel" name="label_39">
+              <widget class="QLabel" name="OrgName_Label">
                <property name="font">
                 <font>
                  <pointsize>29</pointsize>
