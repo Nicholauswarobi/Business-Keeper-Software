@@ -46,12 +46,6 @@ int main(int argc, char *argv[])
             settings.setValue("Database/Name", dbDialog.getDbName());
             settings.setValue("Organization/Name", dbDialog.getOrganizationName());
 
-            qDebug() << "Saved configuration:";
-            qDebug() << "Host:" << dbDialog.getHost();
-            qDebug() << "User:" << dbDialog.getUser();
-            qDebug() << "Password:" << dbDialog.getPassword();
-            qDebug() << "Database Name:" << dbDialog.getDbName();
-            qDebug() << "Organization Name:" << dbDialog.getOrganizationName();
 
             MainWindow w(dbDialog.getOrganizationName());
             w.show();

@@ -27,6 +27,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         databasesetupdialog.h databasesetupdialog.cpp databasesetupdialog.ui
         dbworker.h dbworker.cpp
         addcategorydialog.h addcategorydialog.cpp addcategorydialog.ui
+        settingsdialog.h settingsdialog.cpp settingsdialog.ui
 
 
 
