@@ -2,6 +2,10 @@
 #include "./ui_mainwindow.h"
 #include "QGraphicsDropShadowEffect"
 #include "QIcon"
+#include "addcategorydialog.h"
+#include <QSqlQuery>
+#include <QSqlError>
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -55,6 +59,29 @@ MainWindow::MainWindow(QWidget *parent)
         ui->stackedWidget->setCurrentWidget(ui->Expenses_page);
     });
 
+    connect(ui->New_Product_pushButton, &QPushButton::clicked, this, [=]() {
+        AddCategoryDialog dialog(this);
+        connect(&dialog, &AddCategoryDialog::createCategory, this, [=](const QString &tableName, const QStringList &columns) {
+            // Add category to the categories table
+            QSqlQuery query;
+            query.prepare("INSERT INTO categories (name) VALUES (:name)");
+            query.bindValue(":name", tableName);
+            if (!query.exec()) {
+                QMessageBox::warning(this, "Error", query.lastError().text());
+                return;
+            }
+
+            // Create a category-specific table
+            worker->createCategorySpecificTable(tableName);
+
+            // Add initial columns to the category-specific table
+            for (const QString &column : columns) {
+                worker->addColumnToCategoryTable(tableName, column, "VARCHAR(255)");
+            }
+        });
+        dialog.exec();
+    });
+
 
     // List of Cards Frames
     QList<QWidget*> cards = {
@@ -84,8 +111,12 @@ MainWindow::MainWindow(QWidget *parent)
         fcard->setGraphicsEffect(shadow);
     }
 
+    workerThread = new QThread(this);
+    worker = new DbWorker();
+    worker->moveToThread(workerThread);
 
-
+    connect(workerThread, &QThread::finished, worker, &QObject::deleteLater);
+    workerThread->start();
 }
 
 

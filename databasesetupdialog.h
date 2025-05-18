@@ -2,6 +2,8 @@
 #define DATABASESETUPDIALOG_H
 
 #include <QDialog>
+#include <QThread>
+#include "dbworker.h"
 
 namespace Ui {
 class DatabaseSetupDialog;
@@ -14,16 +16,20 @@ class DatabaseSetupDialog : public QDialog
 public:
     explicit DatabaseSetupDialog(QWidget *parent = nullptr);
     ~DatabaseSetupDialog();
-    QString organizationName() const;
-    QString applicationName() const;
+
+signals:
+    void setupDatabase(const QString &host, const QString &user,
+                       const QString &password, const QString &dbName, bool createIfNotExist);
 
 private slots:
-    void on_Configure_pushButton_Accepted();
+    void on_Configure_pushButton_clicked();
+    void onDatabaseSetupFinished(bool success, const QString &message);
+
 
 private:
     Ui::DatabaseSetupDialog *ui;
-    bool testConnecttion(const QString &host, const QString &user, const QString &pass,
-                         const QString &db, int port);
+    QThread *workerThread;
+    DbWorker *worker;
 };
 
 #endif // DATABASESETUPDIALOG_H

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>518</width>
-    <height>544</height>
+    <width>416</width>
+    <height>462</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -121,7 +121,28 @@ selection-background-color: #423AC1;
 selection-color: #0F2771;
 foint-size: 13px;
 padding: 4px;
-}</string>
+}
+
+
+
+QCheckBox {
+    spacing: 5px;
+
+}
+
+QCheckBox::indicator {
+    width: 20px;
+    height: 20px;
+}
+
+QCheckBox::indicator:unchecked {
+	image: url(:/Blue/Icons/BlueIcons/circle.svg);
+}
+
+QCheckBox::indicator:checked {
+	image: url(:/Blue/Icons/BlueIcons/check-circle.svg);
+}
+</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -204,19 +225,6 @@ padding: 4px;
               </property>
              </widget>
             </item>
-            <item>
-             <widget class="QLabel" name="label_8">
-              <property name="font">
-               <font>
-                <pointsize>12</pointsize>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>Application Name:</string>
-              </property>
-             </widget>
-            </item>
            </layout>
           </widget>
          </item>
@@ -241,18 +249,6 @@ padding: 4px;
               </property>
               <property name="placeholderText">
                <string>Enter organization name..</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLineEdit" name="AppName_lineEdit">
-              <property name="font">
-               <font>
-                <pointsize>12</pointsize>
-               </font>
-              </property>
-              <property name="placeholderText">
-               <string>Enter application name..</string>
               </property>
              </widget>
             </item>
@@ -308,42 +304,16 @@ padding: 4px;
       <property name="bottomMargin">
        <number>0</number>
       </property>
-      <item alignment="Qt::AlignmentFlag::AlignLeft">
-       <widget class="QRadioButton" name="Local_radioButton">
-        <property name="font">
-         <font>
-          <pointsize>12</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Local</string>
-        </property>
-       </widget>
-      </item>
-      <item alignment="Qt::AlignmentFlag::AlignLeft">
-       <widget class="QRadioButton" name="Cloud_radioButton">
-        <property name="font">
-         <font>
-          <pointsize>12</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Cloud</string>
-        </property>
-       </widget>
-      </item>
       <item>
-       <widget class="QComboBox" name="CloudProvider_comboBox">
+       <widget class="QCheckBox" name="NewDB_Checkbox">
         <property name="font">
          <font>
           <pointsize>12</pointsize>
          </font>
         </property>
-        <item>
-         <property name="text">
-          <string>Cloud Provider</string>
-         </property>
-        </item>
+        <property name="text">
+         <string>New database</string>
+        </property>
        </widget>
       </item>
      </layout>
@@ -383,19 +353,6 @@ padding: 4px;
            </property>
            <property name="text">
             <string>Host Name:</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_6">
-           <property name="font">
-            <font>
-             <pointsize>12</pointsize>
-             <bold>true</bold>
-            </font>
-           </property>
-           <property name="text">
-            <string>Port:</string>
            </property>
           </widget>
          </item>
@@ -463,18 +420,6 @@ padding: 4px;
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="Port_lineEdit">
-           <property name="font">
-            <font>
-             <pointsize>12</pointsize>
-            </font>
-           </property>
-           <property name="placeholderText">
-            <string>Enter port..</string>
-           </property>
-          </widget>
-         </item>
-         <item>
           <widget class="QLineEdit" name="Username_lineEdit">
            <property name="font">
             <font>
@@ -525,6 +470,18 @@ padding: 4px;
       </sizepolicy>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QLabel" name="statusLabel">
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Show Status</string>
+        </property>
+       </widget>
+      </item>
       <item>
        <widget class="QPushButton" name="Configure_pushButton">
         <property name="minimumSize">

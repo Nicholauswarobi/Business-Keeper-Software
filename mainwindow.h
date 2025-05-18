@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "dbworker.h"
+#include <QThread>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -19,5 +21,7 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    DbWorker *worker;
+    QThread *workerThread;
 };
 #endif // MAINWINDOW_H

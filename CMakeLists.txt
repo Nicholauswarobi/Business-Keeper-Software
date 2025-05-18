@@ -25,6 +25,10 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ${PROJECT_SOURCES}
         Icons_Resources.qrc
         databasesetupdialog.h databasesetupdialog.cpp databasesetupdialog.ui
+        dbworker.h dbworker.cpp
+        addcategorydialog.h addcategorydialog.cpp addcategorydialog.ui
+
+
 
     )
 # Define target properties for Android with Qt 6 as:

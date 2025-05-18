@@ -1,84 +1,59 @@
 #include "databasesetupdialog.h"
 #include "ui_databasesetupdialog.h"
-#include <QSettings>
 #include <QMessageBox>
-#include <QSqlDatabase>
+#include <QDebug>
 
-DatabaseSetupDialog::DatabaseSetupDialog(QWidget *parent)
-    : QDialog(parent)
-    , ui(new Ui::DatabaseSetupDialog)
+DatabaseSetupDialog::DatabaseSetupDialog(QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::DatabaseSetupDialog),
+    workerThread(new QThread(this)),
+    worker(new DbWorker())
 {
     ui->setupUi(this);
 
-    // Default local database
-    ui->Local_radioButton->setChecked(true);
-    ui->Cloud_radioButton->setVisible(false);
+    // Move worker to a separate thread
+    worker->moveToThread(workerThread);
 
-    connect(ui->Local_radioButton, &QRadioButton::toggled, this, [this](bool checked){
-        ui->
-    })
+    // Connect signals and slots
+    connect(workerThread, &QThread::finished, worker, &QObject::deleteLater);
+    connect(this, &DatabaseSetupDialog::setupDatabase, worker, &DbWorker::setupDatabase);
+    connect(worker, &DbWorker::databaseSetupFinished, this, &DatabaseSetupDialog::onDatabaseSetupFinished);
+    connect(ui->Configure_pushButton, &QPushButton::clicked, this, &DatabaseSetupDialog::on_Configure_pushButton_clicked);
 
-    // Set default values
-    ui->OrganizationName_lineEdit->setText("MyCompany");
-    ui->AppName_lineEdit->setText("BusinessKeeper");
-    ui->Port_lineEdit->setText("3309");
+    // Start the worker thread
+    workerThread->start();
 }
 
 DatabaseSetupDialog::~DatabaseSetupDialog()
 {
+    workerThread->quit();
+    workerThread->wait();
     delete ui;
 }
 
-QString DatabaseSetupDialog::organizationName() const {
-    return ui->OrganizationName_lineEdit->text().trimmed();
-}
-
-QString DatabaseSetupDialog::applicationName() const {
-    return ui->AppName_lineEdit->text().trimmed();
-}
-
-
-void DatabaseSetupDialog::on_Configure_pushButton_Accepted()
+void DatabaseSetupDialog::on_Configure_pushButton_clicked()
 {
-    QString orgName = organizationName();
-    QString appName = applicationName();
+    qDebug() << "Configure button clicked.";
+
     QString host = ui->HostName_lineEdit->text();
     QString user = ui->Username_lineEdit->text();
-    QString passW = ui->Password_lineEdit->text();
-    QString db = ui->DatabaseName_lineEdit->text();
-    int port = ui->Port_lineEdit->text().toInt();
+    QString password = ui->Password_lineEdit->text();
+    QString dbName = ui->DatabaseName_lineEdit->text();
+    bool createIfNotExist = ui->NewDB_Checkbox->isChecked();
 
-    if (orgName.isEmpty() || appName.isEmpty()){
-        QMessageBox::warning(this, "Invalid Input", "Organization and Application names can not be empty!");
-        return;
-    }
+    qDebug() << "Host:" << host << "User:" << user << "DB Name:" << dbName << "Create DB:" << createIfNotExist;
 
-    if (testConnecttion(host, user, passW, db, port)){
-        QSettings settings(orgName, appName);
-        settings.setValue("db/host", host);
-        settings.setValue("db/user", user);
-        settings.setValue("db/passW", passW);
-        settings.setValue("db/name", db);
-        settings.setValue("db/port", port);
-        accept();
-    }
+    emit setupDatabase(host, user, password, dbName, createIfNotExist);
+}
 
-    else{
-        QMessageBox::critical(this, "Connection Failed", "Could not connect to the database!");
+void DatabaseSetupDialog::onDatabaseSetupFinished(bool success, const QString &message)
+{
+    if (success) {
+        accept(); // Close the dialog and proceed to the main window
+    } else {
+        QMessageBox::critical(this, "Database Setup Failed", message);
     }
 }
 
-bool DatabaseSetupDialog::testConnecttion(const QString &host, const QString &user, const QString &pass, const QString &db, int port){
-    QSqlDatabase testDb = QSqlDatabase::addDatabase("QMYSQL", "TestConnection");
-    testDb.setHostName(host);
-    testDb.setUserName(user);
-    testDb.setPassword(pass);
-    testDb.setDatabaseName(db);
-    testDb.setPort(port);
 
-    bool success = testDb.open();
-    testDb.close();
-    QSqlDatabase::removeDatabase("TestConnection");
-    return success;
-}
 
