@@ -6,15 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>428</width>
-    <height>305</height>
+    <width>390</width>
+    <height>207</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
-   <item alignment="Qt::AlignmentFlag::AlignTop">
+   <item>
     <widget class="QWidget" name="widget" native="true">
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item alignment="Qt::AlignmentFlag::AlignTop">
@@ -26,7 +26,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Add Category</string>
+         <string>Add Product`s Category</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -36,7 +36,7 @@
      </layout>
     </widget>
    </item>
-   <item alignment="Qt::AlignmentFlag::AlignTop">
+   <item>
     <widget class="QWidget" name="widget_2" native="true">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
@@ -49,12 +49,12 @@
        <widget class="QLabel" name="label_2">
         <property name="font">
          <font>
-          <pointsize>12</pointsize>
+          <pointsize>13</pointsize>
           <bold>true</bold>
          </font>
         </property>
         <property name="text">
-         <string>Category Table:</string>
+         <string>Category Name:</string>
         </property>
        </widget>
       </item>
@@ -67,40 +67,6 @@
         </property>
         <property name="placeholderText">
          <string>Enter Category name..</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item alignment="Qt::AlignmentFlag::AlignTop">
-    <widget class="QWidget" name="widget_4" native="true">
-     <layout class="QHBoxLayout" name="horizontalLayout_4">
-      <item>
-       <widget class="QLabel" name="label_4">
-        <property name="font">
-         <font>
-          <pointsize>12</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Column name</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="label_3">
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="ColName_lineEdit">
-        <property name="font">
-         <font>
-          <pointsize>12</pointsize>
-         </font>
         </property>
        </widget>
       </item>
@@ -123,6 +89,11 @@
           <width>100</width>
           <height>30</height>
          </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>13</pointsize>
+         </font>
         </property>
         <property name="text">
          <string>Add</string>

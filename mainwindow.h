@@ -20,6 +20,10 @@ public:
     ~MainWindow();
 
     void setOrganizationName(const QString &organizationName);
+
+private slots:
+    void on_New_Product_Category_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     DbWorker *worker;

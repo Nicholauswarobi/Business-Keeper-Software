@@ -21,6 +21,9 @@ MainWindow::MainWindow(const QString &organizationName, QWidget *parent)
     // Set Window Title
     this->setWindowTitle("Business Keeper Software");
 
+    // BUTTON connections
+    connect(ui->New_Product_Category_pushButton, &QPushButton::clicked, this, &MainWindow::on_New_Product_Category_pushButton_clicked);
+
     // Navigate to Page when pushButton is clicked
     connect(ui->Dashboard_pushButton, &QPushButton::clicked, this, [=](){
         ui->stackedWidget->setCurrentWidget(ui->Dashboard_page);
@@ -59,29 +62,6 @@ MainWindow::MainWindow(const QString &organizationName, QWidget *parent)
 
     connect(ui->Expenses_pushButton, &QPushButton::clicked, this, [=](){
         ui->stackedWidget->setCurrentWidget(ui->Expenses_page);
-    });
-
-    connect(ui->New_Product_pushButton, &QPushButton::clicked, this, [=]() {
-        AddCategoryDialog dialog(this);
-        connect(&dialog, &AddCategoryDialog::createCategory, this, [=](const QString &tableName, const QStringList &columns) {
-            // Add category to the categories table
-            QSqlQuery query;
-            query.prepare("INSERT INTO categories (name) VALUES (:name)");
-            query.bindValue(":name", tableName);
-            if (!query.exec()) {
-                QMessageBox::warning(this, "Error", query.lastError().text());
-                return;
-            }
-
-            // Create a category-specific table
-            worker->createCategorySpecificTable(tableName);
-
-            // Add initial columns to the category-specific table
-            for (const QString &column : columns) {
-                worker->addColumnToCategoryTable(tableName, column, "VARCHAR(255)");
-            }
-        });
-        dialog.exec();
     });
 
 
@@ -134,4 +114,33 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
+
+void MainWindow::on_New_Product_Category_pushButton_clicked()
+{
+    AddCategoryDialog dialog(this);
+    if (dialog.exec() == QDialog::Accepted){
+        QString categoryName = dialog.getCategoryName();
+
+        if (categoryName.isEmpty()){
+            QMessageBox::warning(this, "Invalid Input", "Category name can not be empty.");
+            return;
+        }
+
+        // add the category to the database
+        DbWorker dbWorker;
+        if (!dbWorker.addCategory(categoryName)){
+            QMessageBox::critical(this, "Error", "Failed to add category to the database.");
+            return;
+        }
+
+        // Create table for the category
+        if (!dbWorker.createCategorySpecificTable(categoryName)){
+            QMessageBox::critical(this, "Error", "Failed to create table for category.");
+            return;
+        }
+
+        QMessageBox::information(this, "Success", "Category added and table created successfully.");
+    }
+}
 

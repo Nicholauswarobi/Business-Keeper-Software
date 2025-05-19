@@ -15,8 +15,8 @@ public:
     explicit AddCategoryDialog(QWidget *parent = nullptr);
     ~AddCategoryDialog();
 
-signals:
-    void createCategory(const QString &tableName, const QStringList &columns);
+    QString getCategoryName() const;
+
 
 private slots:
     void on_AddCategory_pushButton_clicked();

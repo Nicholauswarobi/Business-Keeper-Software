@@ -2475,7 +2475,7 @@ padding: 4px;
                <widget class="QWidget" name="Product_filterBox_widget" native="true">
                 <layout class="QHBoxLayout" name="horizontalLayout_9">
                  <item>
-                  <widget class="QPushButton" name="New_Product_pushButton">
+                  <widget class="QPushButton" name="New_Product_Category_pushButton">
                    <property name="font">
                     <font>
                      <pointsize>12</pointsize>
